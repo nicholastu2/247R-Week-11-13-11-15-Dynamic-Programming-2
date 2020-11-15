@@ -32,14 +32,30 @@ public static int knapsack(int[] w, int[] v, int maxWeight){
 
 //2. LCS Problem Statement: Given two sequences, find the length of longest subsequence present in both of them. A subsequence is a sequence that appears in the same relative order, but not necessarily contiguous. For example, “abc”, “abg”, “bdf”, “aeg”, ‘”acefg”, .. etc are subsequences of “abcdefg”.
 //abcdefg
-//defopgs
+//deofpgs
+//-->"defg"
+
+public static String longestSubseq(String strOne, String strTwo){
+  HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
+  int number = 1;
+  for (int i = 0; i < strOne.length(); i++) {
+    for (int j = 0; j < strTwo.length(); j++) {
+      if (strOne.charAt(i) == strTwo.charAt(j)) {
+        hm.put(strOne.charAt(i), number);
+        number++;
+      }
+    }
+  }
+
+}
 
 
 
 
   public static void main(String[] args) {
-    int[] weights = {2,2,3};
-    int[] values = {6,10,12};
-    System.out.println(knapsack(weights, values, 5));
+    longestSubseq("abcdefg", ")
+    //int[] weights = {2,2,3};
+    //int[] values = {6,10,12};
+    //System.out.println(knapsack(weights, values, 5));
   }
 }
